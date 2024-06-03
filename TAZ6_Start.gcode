@@ -11,7 +11,9 @@ M109 R160 ; soften filament before homing Z
 G28 ; Home all axis
 G1 E-10 F100 ; retract filament
 M109 R160                  ; wait for extruder to reach wiping temp
-;M206 X0 Y0 Z0 F5000        ; uncomment to adjust wipe position (+X ~ nozzle moves left)(+Y ~ nozzle moves forward)(+Z ~ nozzle moves down)
+
+; this next really long bit is a custom wiggly wiping sequence. See wipegen.pde, which was used to make this.
+; SIGNIFICANTLY better than the builtin! High probing success ratio.
 
 G1 X-15 Y100 F2000 ;
 G1 Z1
@@ -514,7 +516,7 @@ G1 X-14.0000 Y26.2812 F2000 ;
 G1 X-14.1522 Y24.7264 F2000 ;
 G1 X-14.5858 Y24.0000 F2000 ;
 
-G1 Z8 F5000
+G1 Z8 F5000 ; lift after wipe
 
 M206 X0 Y4 Z0               ; reseting stock nozzle position ### CAUTION: changing this line can affect print quality ###
 M109 R150 ; wait for extruder to reach probe temp
