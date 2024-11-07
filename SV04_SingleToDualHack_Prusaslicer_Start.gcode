@@ -1,5 +1,6 @@
 ;SV04 SINGLE MODE DUAL EXT
 ;NOTE! THIS REQUIRES SINGLE (EXT 1) MODE. It sounds dumb because it is, SV04 firmware has problems
+;NOTE! REBOOT OF PRINTER REQ'D ON NEXT PRINT! Ext 1 does not go to bucket on first layer if Ext 2 is first
 ;set temps
 M140 S{first_layer_bed_temperature[0]} ; set bed temp
 M104 T0 S{first_layer_temperature[0]} ; set L extruder temp
